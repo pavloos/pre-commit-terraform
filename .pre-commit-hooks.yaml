@@ -38,6 +38,7 @@
   description: Validates all Terraform configuration files.
   entry: terraform_validate.sh
   language: script
+  pass_filenames: true
   files: (\.tf|\.tfvars)$
   exclude: \.terraform\/.*$
 
@@ -70,6 +71,9 @@
   description: Static analysis of Terraform templates to spot potential security issues.
   entry: terraform_tfsec.sh
   language: script
+  pass_filenames: true
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
 
 - id: checkov
   name: Checkov
